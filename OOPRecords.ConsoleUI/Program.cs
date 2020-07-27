@@ -8,9 +8,12 @@ namespace OOPRecords.ConsoleUI
     {
         static void Main()
         {
-            var students = new StudentRepository();
+            string studentsFile = @"C:\MetalUp\OOPRecords\OOPRecords.ConsoleUI\StudentsFile.js"; //@ needed because '\' characters must be taken literally
+            var students = new StudentRepository(studentsFile);
+            students.Load();
             var init = new Initializer();
             init.Seed(students);
+            students.SaveAll(); 
             while (true)
             {
                 Console.Clear();
