@@ -25,5 +25,12 @@ namespace OOPRecords
             return Students.Where(s => s.Id == id).FirstOrDefault();
         }
 
+        public Student CreateNewStudent(int id, string firstName, string lastName, DateTime dateOfBirth)
+        {
+            Student s = new Student(id, firstName, lastName, dateOfBirth);
+            Add(s);
+            return s;
+        }
+
     }
 }
