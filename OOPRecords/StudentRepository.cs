@@ -20,9 +20,9 @@ namespace OOPRecords
             Context.Students.Add(s);
         }
 
-        public List<Student> AllStudents()
+        public IQueryable<Student> AllStudents()
         {
-            return Context.Students.ToList();
+            return Context.Students;
         }
 
         public Student FindStudentById(int id)
