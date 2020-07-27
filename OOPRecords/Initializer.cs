@@ -5,12 +5,22 @@ using System.Text;
 
 namespace OOPRecords
 {
-    public class Initializer : DropCreateDatabaseAlways<DatabaseContext>
+    public class Initializer : DropCreateDatabaseIfModelChanges<DatabaseContext>
     {
-        protected override void Seed(DatabaseContext dbc)
+        private DatabaseContext Context;
+
+        protected override void Seed(DatabaseContext context)
         {
-            dbc.Students.Add(new Student(1, "James", "Java", new DateTime(2004, 5, 6)));
-            dbc.Students.Add(new Student(2, "Alie", "Algol", new DateTime(2004, 3, 17)));
+            Context = context;
+            CreateNewStudent("James", "Java", new DateTime(2004, 5, 6));
+            CreateNewStudent("Alie", "Algol", new DateTime(2004, 3, 17));
+        }
+
+        private Student CreateNewStudent(string firstName, string lastName, DateTime dob)
+        {
+            var s = new Student() { FirstName = firstName, LastName = lastName, DateOfBirth = dob };
+            Context.Students.Add(s);
+            return s;
         }
     }
 }
