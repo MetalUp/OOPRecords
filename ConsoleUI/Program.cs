@@ -8,9 +8,8 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            var studentRep = new StudentRepository();
-            var init = new Initializer();
-            init.Seed(studentRep);
+            var context = new DatabaseContext("OOPRecords");
+            var studentRep = new StudentRepository(context);
 
             while (true)
             {

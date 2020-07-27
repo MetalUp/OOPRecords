@@ -8,21 +8,26 @@ namespace OOPRecords
 {
     public class StudentRepository
     {
-        private List<Student> Students = new List<Student>();
+        private DatabaseContext Context;
+
+        public StudentRepository(DatabaseContext context)
+        {
+            Context = context;
+        }
 
         public void Add(Student s)
         {
-             Students.Add(s);
+            Context.Students.Add(s);
         }
 
         public List<Student> AllStudents()
         {
-            return Students;
+            return Context.Students.ToList();
         }
 
         public Student FindStudentById(int id)
         {
-            return Students.Where(s => s.Id == id).FirstOrDefault();
+            return AllStudents().Where(s => s.Id == id).FirstOrDefault();
         }
 
         public Student CreateNewStudent(int id, string firstName, string lastName, DateTime dateOfBirth)

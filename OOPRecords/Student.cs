@@ -12,6 +12,10 @@ namespace OOPRecords
 
         public virtual DateTime DateOfBirth { get; set; }
 
+        public Student()
+        {
+
+        }
 
         public Student(int id, string firstName, string lastName, DateTime dateOfBirth)
         {
