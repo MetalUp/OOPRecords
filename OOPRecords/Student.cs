@@ -35,7 +35,7 @@ namespace OOPRecords
 
         public override string ToString()
         {
-            return $"{FirstName} {LastName}, Age {Age()}";
+            return $"{FirstName} {LastName}, No.{Id} , Age {Age()}";
         }
     }
 }

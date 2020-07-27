@@ -12,9 +12,12 @@ namespace ConsoleUI
             var init = new Initializer();
             init.Seed(studentRep);
 
-
-            var students = studentRep.AllStudents();
-            ConsolePlus.WriteList(students, "\n");
+            while (true)
+            {
+                int id = ConsolePlus.ReadInteger("Enter Student Id: ", 1, studentRep.AllStudents().Count);
+                Student s = studentRep.FindStudentById(id);
+                Console.WriteLine(s);
+            }
                     
         }
     }
