@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace OOPRecords
+namespace OOPRecords.Model
 {
     public class StudentRepository
     {
@@ -13,15 +13,27 @@ namespace OOPRecords
             Students.Add(s);
         }
 
-        public List<Student> AllStudents()
+        public IEnumerable<Student> AllStudents()
         {
             return Students;
         }
 
-        public List<Student> FindStudentByLastName(string lastName)
+        public IEnumerable<Student> FindStudentByLastName(string lastName)
         {
-            return Students.Where(s => s.LastName.ToUpper().Contains(lastName.ToUpper())).ToList();
+            return from s in Students
+                   where s.LastName.ToUpper().Contains(lastName.ToUpper())
+                   select s;
         }
 
+
+        public Student NewStudent(string firstName, string lastName, DateTime dob)
+        {
+            var s = new Student();
+            s.FirstName = firstName;
+            s.LastName = lastName;
+            s.DateOfBirth = dob;
+            Students.Add(s);
+            return s;
+        }
     }
 }

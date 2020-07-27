@@ -1,0 +1,70 @@
+﻿using MetalUp;
+using OOPRecords.Model;
+using System;
+
+namespace OOPRecords.ConsoleUI
+{
+    class Program
+    {
+
+        static StudentRepository Students = new StudentRepository();
+
+        static void Main(string[] args)
+        {
+            var init = new Initializer();
+            init.Seed(Students);
+
+            while (true)
+            {
+                MainMenu();
+                Console.WriteLine("Press any key to continue ...");
+                Console.ReadKey();
+            }
+        }
+
+        private static void MainMenu()
+        {
+            Console.Clear();
+            Console.WriteLine("Main Menu");
+            Console.WriteLine("1. Create Student");
+            Console.WriteLine("2. Find Student");
+            Console.WriteLine("3. All Students");
+            int selection = ConsolePlus.ReadInteger("Select option: ", 1, 3);
+            Console.Clear();
+            switch (selection)
+            {
+                case 1:
+                    CreateStudent();
+                    break;
+                case 2:
+                    FindStudent();
+                    break;
+                case 3:
+                    AllStudents();
+                    break;
+            }
+        }
+
+        private static void AllStudents()
+        {
+            ConsolePlus.WriteList(Students.AllStudents(), "\n");
+
+        }
+
+        private static void FindStudent()
+        {
+            Console.WriteLine("Find Student");
+            string match = ConsolePlus.ReadString("Last name (or part of last name:", 1);
+            ConsolePlus.WriteList(Students.FindStudentByLastName(match), "\n");
+        }
+
+        private static void CreateStudent()
+        {
+            Console.WriteLine("Create Student");
+            string firstName = ConsolePlus.ReadString("First Name: ", 1);
+            string lastName = ConsolePlus.ReadString("Last Name: ", 1);
+            DateTime dob = ConsolePlus.ReadDate("Date Of Birth: ", -10000,-1000);
+            Students.NewStudent(firstName, lastName, dob);
+        }
+    }
+}
