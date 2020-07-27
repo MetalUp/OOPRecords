@@ -3,26 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
+using NakedObjects;
 
 namespace OOPRecords
 {
     public class StudentRepository
     {
-        private DatabaseContext Context;
 
-        public StudentRepository(DatabaseContext context)
-        {
-            Context = context;
-        }
+        public IDomainObjectContainer Container { set; protected get; }
 
-        public void Add(Student s)
-        {
-            Context.Students.Add(s);
-        }
 
         public IQueryable<Student> AllStudents()
         {
-            return Context.Students;
+            return Container.Instances<Student>();
         }
 
         public Student FindStudentById(int id)
@@ -32,8 +25,11 @@ namespace OOPRecords
 
         public Student CreateNewStudent(int id, string firstName, string lastName, DateTime dateOfBirth)
         {
-            Student s = new Student(id, firstName, lastName, dateOfBirth);
-            Add(s);
+            var s = Container.NewTransientInstance<Student>();
+            s.FirstName = firstName;
+            s.LastName = lastName;
+            s.DateOfBirth = dateOfBirth;
+            Container.Persist(ref s);
             return s;
         }
 

@@ -12,20 +12,6 @@ namespace OOPRecords
 
         public virtual DateTime DateOfBirth { get; set; }
 
-        public Student()
-        {
-
-        }
-
-        public Student(int id, string firstName, string lastName, DateTime dateOfBirth)
-        {
-            Id = id;
-            FirstName = firstName;
-            LastName = lastName;
-            DateOfBirth = dateOfBirth;
-        }
-
-
         public int Age()
         {
             var today = DateTime.Today;
