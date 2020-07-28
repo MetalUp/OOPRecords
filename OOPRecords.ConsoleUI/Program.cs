@@ -1,6 +1,8 @@
 ﻿using MetalUp;
 using OOPRecords.Model;
 using System;
+using System.IO;
+using System.Linq;
 
 namespace OOPRecords.ConsoleUI
 {
@@ -8,12 +10,17 @@ namespace OOPRecords.ConsoleUI
     {
         static void Main()
         {
-            string studentsFile = @"C:\MetalUp\OOPRecords\OOPRecords.ConsoleUI\StudentsFile.js"; //@ needed because '\' characters must be taken literally
-            var students = new StudentRepository(studentsFile);
-            students.Load();
-            var init = new Initializer();
-            init.Seed(students);
-            students.SaveAll(); 
+            string studentsFileName = @"C:\MetalUp\OOPRecords\OOPRecords.ConsoleUI\StudentsFile.js"; 
+            var students = new StudentRepository(studentsFileName);
+            if (File.Exists(studentsFileName))
+            {
+                students.Load();
+            } else
+            {
+                var init = new Initializer();
+                init.Seed(students);
+                students.SaveAll();
+            }
             while (true)
             {
                 Console.Clear();
