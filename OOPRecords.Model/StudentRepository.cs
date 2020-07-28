@@ -15,11 +15,6 @@ namespace OOPRecords.Model
             Students = context.Students;
         }
 
-        public void Add(Student s)
-        {
-            Students.Add(s);
-        }
-
         public IEnumerable<Student> AllStudents()
         {
             return Students;
@@ -39,7 +34,6 @@ namespace OOPRecords.Model
             s.LastName = lastName;
             s.DateOfBirth = dob;
             Students.Add(s);
-            //SaveAll();
             return s;
         }
     }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace OOPRecords
+namespace OOPRecords.Model
 {
     public class Student
     {
@@ -11,6 +11,8 @@ namespace OOPRecords
         public  string LastName { get; set; }
 
         public  DateTime DateOfBirth { get; set; }
+
+        public Teacher Tutor { get; set; }
 
         public int Age()
         {
