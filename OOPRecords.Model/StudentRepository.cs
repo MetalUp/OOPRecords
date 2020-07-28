@@ -46,21 +46,19 @@ namespace OOPRecords.Model
 
         public void Load()
         {
-
-                using (StreamReader reader = new StreamReader(studentsFile))
-                {
-                    string json = reader.ReadToEnd();
-                    Students = JsonSerializer.Deserialize<List<Student>>(json);
-                }
-
+            using (StreamReader reader = new StreamReader(studentsFile))
+            {
+                string json = reader.ReadToEnd();
+                Students = JsonSerializer.Deserialize<List<Student>>(json);
+            }
         }
 
         public void SaveAll()
         {
-            var options = new JsonSerializerOptions { WriteIndented = true };
-            string json = JsonSerializer.Serialize(Students, options);
             using (StreamWriter writer = new StreamWriter(studentsFile))
             {
+                var options = new JsonSerializerOptions { WriteIndented = true };
+                string json = JsonSerializer.Serialize(Students, options);
                 writer.Write(json);
                 writer.Flush();
             }
