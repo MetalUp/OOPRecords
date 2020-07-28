@@ -10,17 +10,9 @@ namespace OOPRecords.ConsoleUI
     {
         static void Main()
         {
-            string studentsFileName = @"C:\MetalUp\OOPRecords\OOPRecords.ConsoleUI\StudentsFile.js"; 
-            var students = new StudentRepository(studentsFileName);
-            if (File.Exists(studentsFileName))
-            {
-                students.Load();
-            } else
-            {
-                var init = new Initializer();
-                init.Seed(students);
-                students.SaveAll();
-            }
+            var context = new DatabaseContext("OOPRecords");
+            var students = new StudentRepository(context);
+
             while (true)
             {
                 Console.Clear();

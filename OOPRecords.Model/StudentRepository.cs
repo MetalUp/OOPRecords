@@ -1,19 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.IO;
 using System.Linq;
-using System.Text.Json;
 
 namespace OOPRecords.Model
 {
     public class StudentRepository
     {
-        private List<Student> Students = new List<Student>();
-        private string studentsFile;
+        private DbSet<Student> Students;
 
-        public StudentRepository(string studentsFile)
+        public StudentRepository(DatabaseContext context)
         {
-            this.studentsFile = studentsFile;
+            Students = context.Students;
         }
 
         public void Add(Student s)
@@ -40,28 +39,8 @@ namespace OOPRecords.Model
             s.LastName = lastName;
             s.DateOfBirth = dob;
             Students.Add(s);
-            SaveAll();
+            //SaveAll();
             return s;
-        }
-
-        public void Load()
-        {
-            using (StreamReader reader = new StreamReader(studentsFile))
-            {
-                string json = reader.ReadToEnd();
-                Students = JsonSerializer.Deserialize<List<Student>>(json);
-            }
-        }
-
-        public void SaveAll()
-        {
-            using (StreamWriter writer = new StreamWriter(studentsFile))
-            {
-                var options = new JsonSerializerOptions { WriteIndented = true };
-                string json = JsonSerializer.Serialize(Students, options);
-                writer.Write(json);
-                writer.Flush();
-            }
         }
     }
 }

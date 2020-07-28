@@ -1,14 +1,19 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Data.Entity;
 
 namespace OOPRecords.Model
 {
-    public class Initializer
+    public class Initializer : DropCreateDatabaseAlways<DatabaseContext>
     {
-        private StudentRepository Students;
+        //private StudentRepository Students;
+        private DatabaseContext Context;
 
-        public void Seed(StudentRepository students)
+        protected override void Seed(DatabaseContext context) //(StudentRepository students)
         {
-            Students = students;
+            Context = context;
+            //Students = students;
             NewStudent("James", "Java", "24/03/2004");
             NewStudent("Alie", "Algol", "19/02/2004");
 
@@ -20,7 +25,7 @@ namespace OOPRecords.Model
             s.FirstName = firstName;
             s.LastName = lastName;
             s.DateOfBirth = Convert.ToDateTime(dob);
-            Students.Add(s);
+            Context.Students.Add(s);
             return s;
         }
     }
