@@ -14,6 +14,8 @@ namespace OOPRecords.Model
 
         public virtual Teacher Tutor { get; set; }
 
+        public virtual string StudentNumber { get; set; }
+
         public int Age()
         {
             var today = DateTime.Today;

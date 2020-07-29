@@ -8,9 +8,9 @@ namespace OOPRecords.Model
         protected override void Seed(DatabaseContext context)
         {
            var students = context.Students;
-            var jj =NewStudent(students, "James", "Java", "24/03/2004");
-            var aa =NewStudent(students, "Alie", "Algol", "19/02/2004");
-            var mc = NewStudent(students, "Molly", "Cule", "05/05/2004");
+            var jj =NewStudent(students, "James", "Java", "24/03/2004", "HW531");
+            var aa =NewStudent(students, "Alie", "Algol", "19/02/2004", "HM287");
+            var mc = NewStudent(students, "Molly", "Cule", "05/05/2004", "LX046");
             var teachers = context.Teachers;
            var hh = NewTeacher(teachers, "Harry", "Haskell", "Computer Science teacher");
            var bb = NewTeacher(teachers, "Bunny", "Bunsen", "Head of Chemistry");
@@ -19,12 +19,13 @@ namespace OOPRecords.Model
             mc.Tutor = bb;
         }
 
-        private Student NewStudent(DbSet<Student> students, string firstName, string lastName, string dob)  
+        private Student NewStudent(DbSet<Student> students, string firstName, string lastName, string dob, string number)  
         {
             var s = new Student();
             s.FirstName = firstName;
             s.LastName = lastName;
             s.DateOfBirth = Convert.ToDateTime(dob);
+            s.StudentNumber = number;
             students.Add(s);
             return s;
         }
