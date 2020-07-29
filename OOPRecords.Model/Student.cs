@@ -4,15 +4,15 @@ namespace OOPRecords.Model
 {
     public class Student
     {
-        public int Id { get; set; }
+        public virtual int Id { get; set; }
 
-        public  string FirstName { get; set; }
+        public virtual string FirstName { get; set; }
 
-        public  string LastName { get; set; }
+        public virtual string LastName { get; set; }
 
-        public  DateTime DateOfBirth { get; set; }
+        public virtual DateTime DateOfBirth { get; set; }
 
-        public Teacher Tutor { get; set; }
+        public virtual Teacher Tutor { get; set; }
 
         public int Age()
         {

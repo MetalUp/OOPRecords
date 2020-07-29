@@ -2,3 +2,4 @@
 **/bin
 **/obj
 OOPRecords.ConsoleUI/OOPRecords.ConsoleUI.csproj.user
+.vs/OOPRecords/config/applicationhost.config
