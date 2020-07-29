@@ -3,3 +3,4 @@
 **/obj
 OOPRecords.ConsoleUI/OOPRecords.ConsoleUI.csproj.user
 .vs/OOPRecords/config/applicationhost.config
+.vs/OOPRecords.Client/config/applicationhost.config
