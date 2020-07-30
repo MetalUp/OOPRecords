@@ -1,12 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text.Json;
 
 namespace OOPRecords.Model
 {
     public class StudentRepository
     {
         private List<Student> Students = new List<Student>();
+
+        public StudentRepository()
+        {
+            var initializer = new Initializer();
+            initializer.Seed(this);
+        }
 
         public void Add(Student s)
         {

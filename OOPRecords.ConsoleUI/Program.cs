@@ -9,8 +9,7 @@ namespace OOPRecords.ConsoleUI
         static void Main()
         {
             var students = new StudentRepository();
-            var initializer = new Initializer();
-            initializer.Seed(students);
+
             while (true)
             {
                 Console.Clear();
