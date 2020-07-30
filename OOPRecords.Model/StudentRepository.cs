@@ -12,8 +12,16 @@ namespace OOPRecords.Model
 
         public StudentRepository()
         {
-            var initializer = new Initializer();
-            initializer.Seed(this);
+            if (File.Exists(file))
+            {
+                Load();
+            }
+            else
+            {
+                var initializer = new Initializer();
+                initializer.Seed(this);
+                SaveAll();
+            }
         }
 
         public void Add(Student s)
@@ -40,7 +48,31 @@ namespace OOPRecords.Model
             s.LastName = lastName;
             s.DateOfBirth = dob;
             Add(s);
+            SaveAll();
             return s;
         }
+
+        private string file = @"C:\MetalUp\OOPRecords\OOPRecords.ConsoleUI\StudentsFile.js";
+
+        public void Load()
+        {
+            using (StreamReader reader = new StreamReader(file))
+            {
+                string json = reader.ReadToEnd();
+                Students = JsonSerializer.Deserialize<List<Student>>(json);
+            }
+        }
+
+        public void SaveAll()
+        {
+            using (StreamWriter writer = new StreamWriter(file))
+            {
+                var options = new JsonSerializerOptions { WriteIndented = true };
+                string json = JsonSerializer.Serialize(Students, options);
+                writer.Write(json);
+                writer.Flush();
+            }
+        }
+
     }
 }
