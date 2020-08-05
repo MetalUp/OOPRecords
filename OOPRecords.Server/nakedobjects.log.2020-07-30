@@ -1,0 +1,202 @@
+2020-07-29 10:07:17,561  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Application started. Press Ctrl+C to shut down.
+ 2020-07-29 10:07:17,572  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Hosting environment: Development
+ 2020-07-29 10:07:17,572  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Content root path: C:\MetalUp\OOPRecords\OOPRecords.Server
+ 2020-07-29 10:07:17,593  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request starting HTTP/1.1 GET http://localhost:5000/  
+ 2020-07-29 10:07:17,683  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "GetHome", controller = "RestfulObjects"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetHome() on controller NakedObjects.Rest.App.Demo.RestfulObjectsController (OOPRecords.Server).
+ 2020-07-29 10:07:19,849  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Executed action NakedObjects.Rest.App.Demo.RestfulObjectsController.GetHome (OOPRecords.Server) in 2162.8372ms
+ 2020-07-29 10:07:19,851 ERROR Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.? [?] - MESSAGE: An unhandled exception has occurred while executing the request.
+ System.MissingMethodException: No parameterless constructor defined for type 'OOPRecords.Model.TeacherRepository'.
+   at System.RuntimeType.CreateInstanceDefaultCtorSlow(Boolean publicOnly, Boolean wrapExceptions, Boolean fillCache)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, Boolean wrapExceptions)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic, Boolean wrapExceptions)
+   at System.Activator.CreateInstance(Type type)
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToList()
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at NakedObjects.Core.Component.ServicesManager..ctor(IDomainObjectInjector injector, INakedObjectManager manager, IReflectorConfiguration config, ILogger`1 logger)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-07-29 10:07:19,967  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request finished in 2376.3098ms 500 text/html; charset=utf-8
+ 2020-07-29 10:11:04,928  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Application started. Press Ctrl+C to shut down.
+ 2020-07-29 10:11:04,948  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Hosting environment: Development
+ 2020-07-29 10:11:04,950  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Content root path: C:\MetalUp\OOPRecords\OOPRecords.Server
+ 2020-07-29 10:11:04,966  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request starting HTTP/1.1 GET http://localhost:5000/  
+ 2020-07-29 10:11:05,082  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "GetHome", controller = "RestfulObjects"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetHome() on controller NakedObjects.Rest.App.Demo.RestfulObjectsController (OOPRecords.Server).
+ 2020-07-29 10:11:07,305  INFO Microsoft.AspNetCore.Mvc.NewtonsoftJson.NewtonsoftJsonResultExecutor.? [?] - MESSAGE: Executing JsonResult, writing value of type 'NakedObjects.Rest.Snapshot.Representations.HomePageRepresentation'.
+ 2020-07-29 10:11:07,415  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Executed action NakedObjects.Rest.App.Demo.RestfulObjectsController.GetHome (OOPRecords.Server) in 2327.4344ms
+ 2020-07-29 10:11:07,421  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request finished in 2457.2328ms 200 application/json; profile="urn:org.restfulobjects:repr-types/homepage"; charset=utf-8
+ 2020-07-29 10:19:46,361  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Application started. Press Ctrl+C to shut down.
+ 2020-07-29 10:19:46,377  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Hosting environment: Development
+ 2020-07-29 10:19:46,378  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Content root path: C:\MetalUp\OOPRecords\OOPRecords.Server
+ 2020-07-29 10:19:46,393  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request starting HTTP/1.1 GET http://localhost:5000/  
+ 2020-07-29 10:19:46,487  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "GetHome", controller = "RestfulObjects"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetHome() on controller NakedObjects.Rest.App.Demo.RestfulObjectsController (OOPRecords.Server).
+ 2020-07-29 10:19:48,697  INFO Microsoft.AspNetCore.Mvc.NewtonsoftJson.NewtonsoftJsonResultExecutor.? [?] - MESSAGE: Executing JsonResult, writing value of type 'NakedObjects.Rest.Snapshot.Representations.HomePageRepresentation'.
+ 2020-07-29 10:19:48,802  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Executed action NakedObjects.Rest.App.Demo.RestfulObjectsController.GetHome (OOPRecords.Server) in 2309.8051ms
+ 2020-07-29 10:19:48,807  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request finished in 2416.3299ms 200 application/json; profile="urn:org.restfulobjects:repr-types/homepage"; charset=utf-8
+ 2020-07-29 10:19:51,194  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request starting HTTP/1.1 GET http://localhost:5000/menus  
+ 2020-07-29 10:19:51,201  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "GetMenus", controller = "RestfulObjects"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetMenus() on controller NakedObjects.Rest.App.Demo.RestfulObjectsController (OOPRecords.Server).
+ 2020-07-29 10:19:51,297  INFO Microsoft.AspNetCore.Mvc.NewtonsoftJson.NewtonsoftJsonResultExecutor.? [?] - MESSAGE: Executing JsonResult, writing value of type 'NakedObjects.Rest.Snapshot.Representations.ListRepresentation'.
+ 2020-07-29 10:19:51,308  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Executed action NakedObjects.Rest.App.Demo.RestfulObjectsController.GetMenus (OOPRecords.Server) in 103.7984ms
+ 2020-07-29 10:19:51,310  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request finished in 116.2256ms 200 application/json; profile="urn:org.restfulobjects:repr-types/list"; charset=utf-8; x-ro-element-type="System.Object"
+ 2020-07-29 10:19:52,505  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request starting HTTP/1.1 GET http://localhost:5000/menus/StudentRepository  
+ 2020-07-29 10:19:52,515  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "GetMenu", controller = "RestfulObjects"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetMenu(System.String) on controller NakedObjects.Rest.App.Demo.RestfulObjectsController (OOPRecords.Server).
+ 2020-07-29 10:19:52,589  INFO Microsoft.AspNetCore.Mvc.NewtonsoftJson.NewtonsoftJsonResultExecutor.? [?] - MESSAGE: Executing JsonResult, writing value of type 'NakedObjects.Rest.Snapshot.Representations.MenuRepresentation'.
+ 2020-07-29 10:19:52,604  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Executed action NakedObjects.Rest.App.Demo.RestfulObjectsController.GetMenu (OOPRecords.Server) in 86.7761ms
+ 2020-07-29 10:19:52,605  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request finished in 100.0852ms 200 application/json; profile="urn:org.restfulobjects:repr-types/menu"; charset=utf-8
+ 2020-07-29 10:19:56,212  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request starting HTTP/1.1 GET http://localhost:5000/services/OOPRecords.Model.StudentRepository/actions/AllStudents/invoke  
+ 2020-07-29 10:19:56,220  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "GetInvokeOnService", controller = "RestfulObjects"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetInvokeOnService(System.String, System.String, NakedObjects.Rest.Model.ArgumentMap) on controller NakedObjects.Rest.App.Demo.RestfulObjectsController (OOPRecords.Server).
+ 2020-07-29 10:19:56,291  INFO NakedObjects.Facade.Impl.FrameworkFacade.? [?] - MESSAGE: Creating hash for: NakedObjects.Core.Adapter.CollectionMemento raw values: UserName: hash: 1234
+ 2020-07-29 10:19:56,534  INFO Microsoft.AspNetCore.Mvc.NewtonsoftJson.NewtonsoftJsonResultExecutor.? [?] - MESSAGE: Executing JsonResult, writing value of type 'NakedObjects.Snapshot.Rest.Representations.3514705584146990316'.
+ 2020-07-29 10:19:56,543  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Executed action NakedObjects.Rest.App.Demo.RestfulObjectsController.GetInvokeOnService (OOPRecords.Server) in 319.4056ms
+ 2020-07-29 10:19:56,545  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request finished in 332.5057ms 200 application/json; profile="urn:org.restfulobjects:repr-types/action-result"; charset=utf-8; x-ro-element-type="OOPRecords.Model.Student"
+ 2020-07-29 10:19:59,178  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request starting HTTP/1.1 GET http://localhost:5000/objects/OOPRecords.Model.Student/2  
+ 2020-07-29 10:19:59,186  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "GetObject", controller = "RestfulObjects"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetObject(System.String, System.String) on controller NakedObjects.Rest.App.Demo.RestfulObjectsController (OOPRecords.Server).
+ 2020-07-29 10:19:59,493  INFO Microsoft.AspNetCore.Mvc.NewtonsoftJson.NewtonsoftJsonResultExecutor.? [?] - MESSAGE: Executing JsonResult, writing value of type 'NakedObjects.Snapshot.Rest.Representations.8115843264825633370'.
+ 2020-07-29 10:19:59,524  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Executed action NakedObjects.Rest.App.Demo.RestfulObjectsController.GetObject (OOPRecords.Server) in 335.9338ms
+ 2020-07-29 10:19:59,526  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request finished in 347.6155ms 200 application/json; profile="urn:org.restfulobjects:repr-types/object"; charset=utf-8; x-ro-domain-type="OOPRecords.Model.Student"
+ 2020-07-29 10:20:13,236  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request starting HTTP/1.1 GET http://localhost:5000/objects/OOPRecords.Model.Teacher/1  
+ 2020-07-29 10:20:13,240  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "GetObject", controller = "RestfulObjects"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetObject(System.String, System.String) on controller NakedObjects.Rest.App.Demo.RestfulObjectsController (OOPRecords.Server).
+ 2020-07-29 10:20:13,326  INFO Microsoft.AspNetCore.Mvc.NewtonsoftJson.NewtonsoftJsonResultExecutor.? [?] - MESSAGE: Executing JsonResult, writing value of type 'NakedObjects.Snapshot.Rest.Representations.8115843264825633370'.
+ 2020-07-29 10:20:13,337  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Executed action NakedObjects.Rest.App.Demo.RestfulObjectsController.GetObject (OOPRecords.Server) in 94.0006ms
+ 2020-07-29 10:20:13,338  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request finished in 102.4391ms 200 application/json; profile="urn:org.restfulobjects:repr-types/object"; charset=utf-8; x-ro-domain-type="OOPRecords.Model.Teacher"
+ 2020-07-29 10:20:58,222  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request starting HTTP/1.1 GET http://localhost:5000/  
+ 2020-07-29 10:20:58,227  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "GetHome", controller = "RestfulObjects"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetHome() on controller NakedObjects.Rest.App.Demo.RestfulObjectsController (OOPRecords.Server).
+ 2020-07-29 10:20:58,235  INFO Microsoft.AspNetCore.Mvc.NewtonsoftJson.NewtonsoftJsonResultExecutor.? [?] - MESSAGE: Executing JsonResult, writing value of type 'NakedObjects.Rest.Snapshot.Representations.HomePageRepresentation'.
+ 2020-07-29 10:20:58,242  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Executed action NakedObjects.Rest.App.Demo.RestfulObjectsController.GetHome (OOPRecords.Server) in 13.2369ms
+ 2020-07-29 10:20:58,247  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request finished in 25.6269ms 200 application/json; profile="urn:org.restfulobjects:repr-types/homepage"; charset=utf-8
+ 2020-07-29 11:36:29,507  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Application started. Press Ctrl+C to shut down.
+ 2020-07-29 11:36:29,525  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Hosting environment: Development
+ 2020-07-29 11:36:29,527  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Content root path: C:\MetalUp\OOPRecords\OOPRecords.Server
+ 2020-07-29 11:36:29,546  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request starting HTTP/1.1 GET http://localhost:5000/  
+ 2020-07-29 11:36:29,655  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "GetHome", controller = "RestfulObjects"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetHome() on controller NakedObjects.Rest.App.Demo.RestfulObjectsController (OOPRecords.Server).
+ 2020-07-29 11:36:32,338  INFO Microsoft.AspNetCore.Mvc.NewtonsoftJson.NewtonsoftJsonResultExecutor.? [?] - MESSAGE: Executing JsonResult, writing value of type 'NakedObjects.Rest.Snapshot.Representations.HomePageRepresentation'.
+ 2020-07-29 11:36:32,464  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Executed action NakedObjects.Rest.App.Demo.RestfulObjectsController.GetHome (OOPRecords.Server) in 2804.5536ms
+ 2020-07-29 11:36:32,471  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request finished in 2927.7129ms 200 application/json; profile="urn:org.restfulobjects:repr-types/homepage"; charset=utf-8
+ 2020-07-29 11:36:44,077  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request starting HTTP/1.1 OPTIONS http://localhost:5000/  
+ 2020-07-29 11:36:44,086  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution successful.
+ 2020-07-29 11:36:44,088  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request starting HTTP/1.1 OPTIONS http://localhost:5000/  
+ 2020-07-29 11:36:44,090  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution successful.
+ 2020-07-29 11:36:44,095  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request finished in 6.3502ms 204 
+ 2020-07-29 11:36:44,095  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request finished in 17.8416ms 204 
+ 2020-07-29 11:36:44,105  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request starting HTTP/1.1 GET http://localhost:5000/ application/json 
+ 2020-07-29 11:36:44,107  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution successful.
+ 2020-07-29 11:36:44,113  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "GetHome", controller = "RestfulObjects"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetHome() on controller NakedObjects.Rest.App.Demo.RestfulObjectsController (OOPRecords.Server).
+ 2020-07-29 11:36:44,128  INFO Microsoft.AspNetCore.Mvc.NewtonsoftJson.NewtonsoftJsonResultExecutor.? [?] - MESSAGE: Executing JsonResult, writing value of type 'NakedObjects.Rest.Snapshot.Representations.HomePageRepresentation'.
+ 2020-07-29 11:36:44,131  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Executed action NakedObjects.Rest.App.Demo.RestfulObjectsController.GetHome (OOPRecords.Server) in 15.9891ms
+ 2020-07-29 11:36:44,137  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request finished in 31.8961ms 200 application/json; profile="urn:org.restfulobjects:repr-types/homepage"; charset=utf-8
+ 2020-07-29 11:36:44,140  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request starting HTTP/1.1 GET http://localhost:5000/ application/json 
+ 2020-07-29 11:36:44,142  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution successful.
+ 2020-07-29 11:36:44,144  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "GetHome", controller = "RestfulObjects"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetHome() on controller NakedObjects.Rest.App.Demo.RestfulObjectsController (OOPRecords.Server).
+ 2020-07-29 11:36:44,147  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request starting HTTP/1.1 OPTIONS http://localhost:5000/menus  
+ 2020-07-29 11:36:44,149  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution successful.
+ 2020-07-29 11:36:44,152  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request finished in 4.8924ms 204 
+ 2020-07-29 11:36:44,154  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request starting HTTP/1.1 GET http://localhost:5000/menus application/json 
+ 2020-07-29 11:36:44,155  INFO Microsoft.AspNetCore.Mvc.NewtonsoftJson.NewtonsoftJsonResultExecutor.? [?] - MESSAGE: Executing JsonResult, writing value of type 'NakedObjects.Rest.Snapshot.Representations.HomePageRepresentation'.
+ 2020-07-29 11:36:44,156  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution successful.
+ 2020-07-29 11:36:44,159  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Executed action NakedObjects.Rest.App.Demo.RestfulObjectsController.GetHome (OOPRecords.Server) in 12.5001ms
+ 2020-07-29 11:36:44,160  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request finished in 19.9467ms 200 application/json; profile="urn:org.restfulobjects:repr-types/homepage"; charset=utf-8
+ 2020-07-29 11:36:44,166  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request starting HTTP/1.1 OPTIONS http://localhost:5000/user  
+ 2020-07-29 11:36:44,168  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution successful.
+ 2020-07-29 11:36:44,169  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request finished in 3.0095ms 204 
+ 2020-07-29 11:36:44,169  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "GetMenus", controller = "RestfulObjects"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetMenus() on controller NakedObjects.Rest.App.Demo.RestfulObjectsController (OOPRecords.Server).
+ 2020-07-29 11:36:44,172  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request starting HTTP/1.1 GET http://localhost:5000/user application/json 
+ 2020-07-29 11:36:44,173  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution successful.
+ 2020-07-29 11:36:44,176  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "GetUser", controller = "RestfulObjects"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetUser() on controller NakedObjects.Rest.App.Demo.RestfulObjectsController (OOPRecords.Server).
+ 2020-07-29 11:36:44,190  INFO Microsoft.AspNetCore.Mvc.NewtonsoftJson.NewtonsoftJsonResultExecutor.? [?] - MESSAGE: Executing JsonResult, writing value of type 'NakedObjects.Rest.Snapshot.Representations.UserRepresentation'.
+ 2020-07-29 11:36:44,194  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Executed action NakedObjects.Rest.App.Demo.RestfulObjectsController.GetUser (OOPRecords.Server) in 16.6684ms
+ 2020-07-29 11:36:44,196  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request finished in 23.3946ms 200 application/json; profile="urn:org.restfulobjects:repr-types/user"; charset=utf-8
+ 2020-07-29 11:36:44,265  INFO Microsoft.AspNetCore.Mvc.NewtonsoftJson.NewtonsoftJsonResultExecutor.? [?] - MESSAGE: Executing JsonResult, writing value of type 'NakedObjects.Rest.Snapshot.Representations.ListRepresentation'.
+ 2020-07-29 11:36:44,274  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Executed action NakedObjects.Rest.App.Demo.RestfulObjectsController.GetMenus (OOPRecords.Server) in 101.5023ms
+ 2020-07-29 11:36:44,275  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request finished in 120.9614ms 200 application/json; profile="urn:org.restfulobjects:repr-types/list"; charset=utf-8; x-ro-element-type="System.Object"
+ 2020-07-29 11:36:45,685  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request starting HTTP/1.1 OPTIONS http://localhost:5000/menus/StudentRepository  
+ 2020-07-29 11:36:45,689  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution successful.
+ 2020-07-29 11:36:45,693  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request finished in 8.2842ms 204 
+ 2020-07-29 11:36:45,695  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request starting HTTP/1.1 GET http://localhost:5000/menus/StudentRepository application/json 
+ 2020-07-29 11:36:45,697  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution successful.
+ 2020-07-29 11:36:45,705  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "GetMenu", controller = "RestfulObjects"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetMenu(System.String) on controller NakedObjects.Rest.App.Demo.RestfulObjectsController (OOPRecords.Server).
+ 2020-07-29 11:36:45,768  INFO Microsoft.AspNetCore.Mvc.NewtonsoftJson.NewtonsoftJsonResultExecutor.? [?] - MESSAGE: Executing JsonResult, writing value of type 'NakedObjects.Rest.Snapshot.Representations.MenuRepresentation'.
+ 2020-07-29 11:36:45,782  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Executed action NakedObjects.Rest.App.Demo.RestfulObjectsController.GetMenu (OOPRecords.Server) in 76.2235ms
+ 2020-07-29 11:36:45,785  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request finished in 89.8423ms 200 application/json; profile="urn:org.restfulobjects:repr-types/menu"; charset=utf-8
+ 2020-07-29 11:36:47,574  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request starting HTTP/1.1 OPTIONS http://localhost:5000/services/OOPRecords.Model.StudentRepository/actions/AllStudents/invoke?x-ro-inline-property-details=false  
+ 2020-07-29 11:36:47,577  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution successful.
+ 2020-07-29 11:36:47,580  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request finished in 6.5402ms 204 
+ 2020-07-29 11:36:47,582  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request starting HTTP/1.1 GET http://localhost:5000/services/OOPRecords.Model.StudentRepository/actions/AllStudents/invoke?x-ro-inline-property-details=false application/json 
+ 2020-07-29 11:36:47,583  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution successful.
+ 2020-07-29 11:36:47,587  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "GetInvokeOnService", controller = "RestfulObjects"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetInvokeOnService(System.String, System.String, NakedObjects.Rest.Model.ArgumentMap) on controller NakedObjects.Rest.App.Demo.RestfulObjectsController (OOPRecords.Server).
+ 2020-07-29 11:36:47,641  INFO NakedObjects.Facade.Impl.FrameworkFacade.? [?] - MESSAGE: Creating hash for: NakedObjects.Core.Adapter.CollectionMemento raw values: UserName: hash: 1234
+ 2020-07-29 11:36:47,878  INFO Microsoft.AspNetCore.Mvc.NewtonsoftJson.NewtonsoftJsonResultExecutor.? [?] - MESSAGE: Executing JsonResult, writing value of type 'NakedObjects.Snapshot.Rest.Representations.3514705584146990316'.
+ 2020-07-29 11:36:47,886  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Executed action NakedObjects.Rest.App.Demo.RestfulObjectsController.GetInvokeOnService (OOPRecords.Server) in 298.1085ms
+ 2020-07-29 11:36:47,888  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request finished in 306.3045ms 200 application/json; profile="urn:org.restfulobjects:repr-types/action-result"; charset=utf-8; x-ro-element-type="OOPRecords.Model.Student"
+ 2020-07-29 11:36:49,532  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request starting HTTP/1.1 OPTIONS http://localhost:5000/objects/OOPRecords.Model.Student/2?x-ro-inline-property-details=false  
+ 2020-07-29 11:36:49,536  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution successful.
+ 2020-07-29 11:36:49,539  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request finished in 6.8151ms 204 
+ 2020-07-29 11:36:49,542  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request starting HTTP/1.1 GET http://localhost:5000/objects/OOPRecords.Model.Student/2?x-ro-inline-property-details=false application/json 
+ 2020-07-29 11:36:49,544  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution successful.
+ 2020-07-29 11:36:49,551  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "GetObject", controller = "RestfulObjects"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetObject(System.String, System.String) on controller NakedObjects.Rest.App.Demo.RestfulObjectsController (OOPRecords.Server).
+ 2020-07-29 11:36:49,849  INFO Microsoft.AspNetCore.Mvc.NewtonsoftJson.NewtonsoftJsonResultExecutor.? [?] - MESSAGE: Executing JsonResult, writing value of type 'NakedObjects.Snapshot.Rest.Representations.8115843264825633370'.
+ 2020-07-29 11:36:49,877  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Executed action NakedObjects.Rest.App.Demo.RestfulObjectsController.GetObject (OOPRecords.Server) in 323.4448ms
+ 2020-07-29 11:36:49,879  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request finished in 337.7755ms 200 application/json; profile="urn:org.restfulobjects:repr-types/object"; charset=utf-8; x-ro-domain-type="OOPRecords.Model.Student"
+ 2020-07-29 11:36:51,528  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request starting HTTP/1.1 OPTIONS http://localhost:5000/objects/OOPRecords.Model.Teacher/1?x-ro-inline-property-details=false  
+ 2020-07-29 11:36:51,531  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution successful.
+ 2020-07-29 11:36:51,533  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request finished in 4.8965ms 204 
+ 2020-07-29 11:36:51,535  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request starting HTTP/1.1 GET http://localhost:5000/objects/OOPRecords.Model.Teacher/1?x-ro-inline-property-details=false application/json 
+ 2020-07-29 11:36:51,536  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution successful.
+ 2020-07-29 11:36:51,538  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "GetObject", controller = "RestfulObjects"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetObject(System.String, System.String) on controller NakedObjects.Rest.App.Demo.RestfulObjectsController (OOPRecords.Server).
+ 2020-07-29 11:36:51,619  INFO Microsoft.AspNetCore.Mvc.NewtonsoftJson.NewtonsoftJsonResultExecutor.? [?] - MESSAGE: Executing JsonResult, writing value of type 'NakedObjects.Snapshot.Rest.Representations.8115843264825633370'.
+ 2020-07-29 11:36:51,631  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Executed action NakedObjects.Rest.App.Demo.RestfulObjectsController.GetObject (OOPRecords.Server) in 91.4914ms
+ 2020-07-29 11:36:51,632  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request finished in 97.1493ms 200 application/json; profile="urn:org.restfulobjects:repr-types/object"; charset=utf-8; x-ro-domain-type="OOPRecords.Model.Teacher"
+ 2020-07-29 11:37:25,497  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request starting HTTP/1.1 OPTIONS http://localhost:5000/objects/OOPRecords.Model.Teacher/1/collections/Tutees?x-ro-inline-collection-items=true  
+ 2020-07-29 11:37:25,500  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution successful.
+ 2020-07-29 11:37:25,506  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request finished in 8.9708ms 204 
+ 2020-07-29 11:37:25,510  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request starting HTTP/1.1 GET http://localhost:5000/objects/OOPRecords.Model.Teacher/1/collections/Tutees?x-ro-inline-collection-items=true application/json 
+ 2020-07-29 11:37:25,515  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution successful.
+ 2020-07-29 11:37:25,522  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "GetCollection", controller = "RestfulObjects"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetCollection(System.String, System.String, System.String) on controller NakedObjects.Rest.App.Demo.RestfulObjectsController (OOPRecords.Server).
+ 2020-07-29 11:37:25,567  INFO Microsoft.AspNetCore.Mvc.NewtonsoftJson.NewtonsoftJsonResultExecutor.? [?] - MESSAGE: Executing JsonResult, writing value of type 'NakedObjects.Snapshot.Rest.Representations.4944773308995461442'.
+ 2020-07-29 11:37:25,575  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Executed action NakedObjects.Rest.App.Demo.RestfulObjectsController.GetCollection (OOPRecords.Server) in 51.9163ms
+ 2020-07-29 11:37:25,577  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request finished in 67.5123ms 200 application/json; profile="urn:org.restfulobjects:repr-types/object-collection"; charset=utf-8; x-ro-element-type="OOPRecords.Model.Student"
+ 2020-07-29 11:37:27,605  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request starting HTTP/1.1 OPTIONS http://localhost:5000/objects/OOPRecords.Model.Student/1?x-ro-inline-property-details=false  
+ 2020-07-29 11:37:27,609  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution successful.
+ 2020-07-29 11:37:27,612  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request finished in 6.6118ms 204 
+ 2020-07-29 11:37:27,615  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request starting HTTP/1.1 GET http://localhost:5000/objects/OOPRecords.Model.Student/1?x-ro-inline-property-details=false application/json 
+ 2020-07-29 11:37:27,617  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution successful.
+ 2020-07-29 11:37:27,619  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "GetObject", controller = "RestfulObjects"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetObject(System.String, System.String) on controller NakedObjects.Rest.App.Demo.RestfulObjectsController (OOPRecords.Server).
+ 2020-07-29 11:37:27,634  INFO Microsoft.AspNetCore.Mvc.NewtonsoftJson.NewtonsoftJsonResultExecutor.? [?] - MESSAGE: Executing JsonResult, writing value of type 'NakedObjects.Snapshot.Rest.Representations.8115843264825633370'.
+ 2020-07-29 11:37:27,637  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.? [?] - MESSAGE: Executed action NakedObjects.Rest.App.Demo.RestfulObjectsController.GetObject (OOPRecords.Server) in 15.9724ms
+ 2020-07-29 11:37:27,638  INFO Microsoft.AspNetCore.Hosting.Diagnostics.? [?] - MESSAGE: Request finished in 23.3894ms 200 application/json; profile="urn:org.restfulobjects:repr-types/object"; charset=utf-8; x-ro-domain-type="OOPRecords.Model.Student"
+ 
