@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NakedObjects;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.IO;
@@ -8,21 +9,12 @@ namespace OOPRecords.Model
 {
 public class StudentRepository
 {
-    private DbSet<Student> Students;
 
-        public StudentRepository(DatabaseContext context)
-        {
-            Students = context.Students;
-        }
-
-        public void Add(Student s)
-        {
-            Students.Add(s);
-        }
+        public IDomainObjectContainer Container { set; protected get; }
 
         public IQueryable<Student> AllStudents()
         {
-            return Students;
+            return Container.Instances<Student>();
         }
 
         public IQueryable<Student> FindStudentByLastName(string lastName)
@@ -34,11 +26,11 @@ public class StudentRepository
 
         public Student NewStudent(string firstName, string lastName, DateTime dob)
         {
-            var s = new Student();
+            var s = Container.NewTransientInstance<Student>();
             s.FirstName = firstName;
             s.LastName = lastName;
             s.DateOfBirth = dob;
-            Add(s);
+            Container.Persist(ref s);
             return s;
         }
 

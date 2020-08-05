@@ -4,15 +4,15 @@ namespace OOPRecords.Model
 {
     public class Teacher
     {
-        public int Id { get; set; }
+        public virtual int Id { get; set; }
 
-        public string FirstName { get; set; }
+        public virtual string FirstName { get; set; }
 
-        public string LastName { get; set; }
+        public virtual string LastName { get; set; }
 
-        public string JobTitle { get; set; }
+        public virtual string JobTitle { get; set; }
 
-        public List<Student> Tutees { get; set; } = new List<Student>();
+        public virtual ICollection<Student> Tutees { get; set; } = new List<Student>();
 
         public override string ToString()
         {
