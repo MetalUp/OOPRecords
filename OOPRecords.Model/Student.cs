@@ -27,8 +27,14 @@ namespace OOPRecords.Model
         [MemberOrder(3)]
         public virtual string LastName { get; set; }
 
-        [MemberOrder(4)]
+        [MemberOrder(4)][Hidden(WhenTo.OncePersisted)]
         public virtual DateTime DateOfBirth { get; set; }
+
+        public void ConfirmDateOfBirth(DateTime dateOfBirth)
+        {
+            var message = dateOfBirth == DateOfBirth ? "CORRECT" : "INCORRECT";
+            Container.InformUser($"The date of birth you entered is {message} for this student.");
+        }
 
         public string ValidateDateOfBirth(DateTime dob)
         {

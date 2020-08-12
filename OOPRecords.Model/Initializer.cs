@@ -7,10 +7,7 @@ namespace OOPRecords.Model
     {
 
         protected override void Seed(DatabaseContext context)
-        {
-           
-
-            
+        {             
             #region  Teachers
             var teachers = context.Teachers;
             var de = NewTeacher(teachers, "Mr.","Deckerd");
@@ -28,19 +25,18 @@ namespace OOPRecords.Model
             var dh = NewTeacher(teachers, "Dr.", "Hu");
             var co = NewTeacher(teachers, "Cpt.", "Over");
             #endregion
-
             #region Students
             var students = context.Students;
             var aa = NewStudent(students, "Alie", "Algol", "19/02/2004", "HM287");
             var ff = NewStudent(students, "Forrest", "Fortran", "22/09/2003", "LX046");
             var jj = NewStudent(students, "James", "Java", "24/03/2004", "HW531");
-            var cc = NewStudent(students, "Celia", "Cee-Sharp", "22/09/2003", "LX046");
-            var vv = NewStudent(students, "Veronica", "Vee-Bee", "22/09/2003", "LX046");
-            var ss = NewStudent(students, "Simon", "Simula", "22/09/2003", "LX046");
-            var tt = NewStudent(students, "Tilly", "TypeScript", "22/09/2003", "LX046");
-            var pp = NewStudent(students, "Petra", "Python", "22/09/2003", "LX046");
-            var hh = NewStudent(students, "Harry", "Haskell", "22/09/2003", "LX046");
-            var cb = NewStudent(students, "Corinie","Cobol", "22/09/2003", "LX046");
+            var cc = NewStudent(students, "Celia", "Cee-Sharp", "12/09/2003", "LX033");
+            var vv = NewStudent(students, "Veronica", "Vee-Bee", "05/09/2003", "HM119");
+            var ss = NewStudent(students, "Simon", "Simula", "31/07/2003", "HW309");
+            var tt = NewStudent(students, "Tilly", "TypeScript", "14/01/2003", "LX008");
+            var pp = NewStudent(students, "Petra", "Python", "17/06/2003", "LX 144");
+            var hh = NewStudent(students, "Harry", "Haskell", "08/04/2003", "HM200");
+            var cb = NewStudent(students, "Corinie","Cobol", "28/02/2003", "HW442");
             //assign tutors
             jj.Tutor = dd;
             aa.Tutor = mw;
