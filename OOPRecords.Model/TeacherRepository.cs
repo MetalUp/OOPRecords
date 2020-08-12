@@ -27,10 +27,10 @@ public class TeacherRepository
                    select t;
         }
 
-        public Teacher NewTeacher(string firstName, string lastName, string job)
+        public Teacher NewTeacher(string title, string lastName, string job)
         {
             var t = Container.NewTransientInstance<Teacher>();
-            t.FirstName = firstName;
+            t.Title = title;
             t.LastName = lastName;
             t.JobTitle = job;
             Container.Persist(ref t);

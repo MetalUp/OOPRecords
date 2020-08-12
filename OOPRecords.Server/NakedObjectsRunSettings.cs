@@ -35,7 +35,9 @@ namespace NakedObjects.Rest.App.Demo {
             get {
                 return new [] {
                     typeof(StudentRepository),
-                    typeof(TeacherRepository)
+                    typeof(TeacherRepository),
+                    typeof(SubjectRepository),
+                    typeof(SetRepository),
                 };
             }
         }
@@ -66,7 +68,9 @@ namespace NakedObjects.Rest.App.Demo {
         public static IMenu[] MainMenus(IMenuFactory factory) {
             return new IMenu[] {
                 factory.NewMenu<StudentRepository>(true, "Students"),
-                factory.NewMenu<TeacherRepository>(true, "Staff")
+                factory.NewMenu<TeacherRepository>(true, "Staff"),
+                factory.NewMenu<SubjectRepository>(true, "Subjects"),
+                 factory.NewMenu<SetRepository>(true, "Sets")
             };
         }
     }

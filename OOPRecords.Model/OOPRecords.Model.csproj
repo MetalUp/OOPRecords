@@ -5,6 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="AcademyDbInitializer.cs" />
+    <Compile Remove="StudentPlus.cs" />
+    <Compile Remove="TeacherPlus.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.4.4" />
     <PackageReference Include="NakedObjects.ProgrammingModel" Version="8.0.0" />
   </ItemGroup>
