@@ -3,7 +3,7 @@ using System.Data.Entity;
 
 namespace OOPRecords.Model
 {
-    public class Initializer : DropCreateDatabaseAlways<DatabaseContext>
+    public class Initializer : DropCreateDatabaseIfModelChanges<DatabaseContext>
     {
         protected override void Seed(DatabaseContext context)
         {
