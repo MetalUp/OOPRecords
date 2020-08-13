@@ -5,10 +5,8 @@ namespace OOPRecords.Model
 {
     public class SetRepository
     {
-        #region Injected Services
-        //An implementation of this interface is injected automatically by the framework
         public IDomainObjectContainer Container { set; protected get; }
-        #endregion
+
         public Set CreateNewSet()
         {
             return Container.NewTransientInstance<Set>();

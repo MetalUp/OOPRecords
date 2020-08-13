@@ -51,7 +51,7 @@ namespace OOPRecords.Model
         }
 
 
-        [MemberOrder(3)]
+        [MemberOrder(6)]
         [Eagerly(EagerlyAttribute.Do.Rendering)]
         [TableView(false, "Subject", "SetName", "Teacher")]
         public virtual ICollection<Set> Sets { get; set; } = new List<Set>();
@@ -79,23 +79,11 @@ namespace OOPRecords.Model
             return studentReps.OrderByDescending(sr => sr.Date);
         }
 
-        public SubjectReport CreateNewReport(Subject sub)
+        public SubjectReport CreateNewReport()
         {
             var rep = Container.NewTransientInstance<SubjectReport>();
             rep.Student = this;
-            rep.Subject = sub;
             return rep;
-        }
-
-        public IQueryable<Subject> AutoComplete0CreateNewReport(string match)
-        {
-            return SubjectRepository.FindSubjectByName(match);
-        }
-
-
-        public void SendMessage(string subject, string message)
-        {
-            Container.InformUser("Message sent to " + ToString());
         }
     }
 }

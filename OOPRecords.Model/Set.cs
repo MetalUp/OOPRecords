@@ -8,13 +8,10 @@ namespace OOPRecords.Model
 {
     public class Set
     {
-        #region Injected Services
         public IDomainObjectContainer Container { set; protected get; }
-        #endregion
 
         [NakedObjectsIgnore]
         public virtual int Id { get; set; }
-
 
         [MemberOrder(1)]
         public virtual string SetName { get; set; }
@@ -28,7 +25,6 @@ namespace OOPRecords.Model
         [MemberOrder(4)]
         public virtual Teacher Teacher { get; set; }
 
-
         [Eagerly(EagerlyAttribute.Do.Rendering)]
         [TableView(false, "FullName")]
         [MemberOrder(5)]
@@ -39,7 +35,6 @@ namespace OOPRecords.Model
             Students.Add(student);
         }
 
-
         public void RemoveStudentFromSet(Student student)
         {
             Students.Remove(student);
@@ -48,25 +43,6 @@ namespace OOPRecords.Model
         public IList<Student> Choices0RemoveStudentFromSet()
         {
             return Students.ToList();
-        }
-
-        public void TransferStudentTo(Student student, Set newSet)
-        {
-            this.RemoveStudentFromSet(student);
-            newSet.AddStudentToSet(student);
-        }
-
-        public IList<Student> Choices0TransferStudentTo()
-        {
-            return Students.ToList();
-        }
-
-        [PageSize(10)]
-        public IList<Set> Choices1TransferStudentTo()
-        {
-            int subjId = this.Subject.Id;
-            int yg = this.YearGroup;
-            return Container.Instances<Set>().Where(s => s.Subject.Id == subjId && s.YearGroup == yg).ToList();
         }
 
         public override string ToString()

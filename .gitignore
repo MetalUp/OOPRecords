@@ -5,3 +5,4 @@ OOPRecords.ConsoleUI/OOPRecords.ConsoleUI.csproj.user
 .vs/OOPRecords/config/applicationhost.config
 .vs/OOPRecords.Client/config/applicationhost.config
 *.v2
+OOPRecords.Server/nakedobjects.log.*

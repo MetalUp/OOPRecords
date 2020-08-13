@@ -8,31 +8,25 @@ namespace OOPRecords.Model
 {
     public class SubjectReport 
     {
-        #region Injected Services
-        public StudentRepository Students { set; protected get; }
+        public TeacherRepository TeacherRepository { set; protected get; }
+        public SubjectRepository SubjectRepository { set; protected get; }
 
-        public TeacherRepository Teachers { set; protected get; }
-
-        public SubjectRepository Subjects { set; protected get; }
-        #endregion
-
-        [NakedObjectsIgnore]
+        [Hidden(WhenTo.Always)]
         public virtual int Id { get; set; }
 
-        [MemberOrder(1), Disabled]
+        [MemberOrder(1)][Disabled]
         public virtual Student Student { get; set; }
 
         [MemberOrder(2)]
         public virtual Subject Subject { get; set; }
 
-        public IQueryable<Subject> AutoCompleteSubject()
+        public IQueryable<Subject> AutoCompleteSubject(string match)
         {
-            return Subjects.AllSubjects();
+            return SubjectRepository.FindSubjectByName(match);
         }
 
         [MemberOrder(3)]
         public virtual string Grade { get; set; }
-
 
         public IList<string> ChoicesGrade()
         {
@@ -44,7 +38,7 @@ namespace OOPRecords.Model
 
         public IList<Teacher> ChoicesGivenBy()
         {
-            return Teachers.AllTeachers().ToList();
+            return TeacherRepository.AllTeachers().ToList();
         }
 
         [MemberOrder(5)]
@@ -56,8 +50,7 @@ namespace OOPRecords.Model
             return DateTime.Today;
         }
 
-        [MemberOrder(6)]
-        [MultiLine][Optionally]
+        [MemberOrder(6)][MultiLine][Optionally]
         public virtual string Notes { get; set; }
 
         public override string ToString()

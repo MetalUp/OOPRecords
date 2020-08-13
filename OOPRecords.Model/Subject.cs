@@ -4,7 +4,7 @@ namespace OOPRecords.Model
 {
     public class Subject
     {
-        [NakedObjectsIgnore]
+        [Hidden(WhenTo.Always)]
         public virtual int Id { get; set; }
 
         [MemberOrder(1)]
