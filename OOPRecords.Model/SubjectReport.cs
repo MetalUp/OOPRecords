@@ -55,7 +55,7 @@ namespace OOPRecords.Model
 
         public override string ToString()
         {
-            return $"{Subject}, {Date.Date}";
+            return $"{Subject}, {Date}";
         }
     }
 }
