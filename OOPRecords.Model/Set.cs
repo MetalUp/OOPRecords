@@ -25,8 +25,6 @@ namespace OOPRecords.Model
         [MemberOrder(4)]
         public virtual Teacher Teacher { get; set; }
 
-        [Eagerly(EagerlyAttribute.Do.Rendering)]
-        [TableView(false, "FullName")]
         [MemberOrder(5)]
         public virtual ICollection<Student> Students { get; set; } = new List<Student>();
 

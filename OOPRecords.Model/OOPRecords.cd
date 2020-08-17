@@ -39,6 +39,11 @@
   </Class>
   <Class Name="OOPRecords.Model.Set">
     <Position X="6.25" Y="1.25" Width="1.5" />
+    <AssociationLine Name="Teacher" Type="OOPRecords.Model.Teacher">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-2.941" Y="0.507" />
+      </MemberNameLabel>
+    </AssociationLine>
     <AssociationLine Name="Students" Type="OOPRecords.Model.Student" FixedFromPoint="true">
       <Path>
         <Point X="6.25" Y="2.562" />
@@ -46,11 +51,6 @@
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="0.19" Y="0.076" />
-      </MemberNameLabel>
-    </AssociationLine>
-    <AssociationLine Name="Teacher" Type="OOPRecords.Model.Teacher">
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="-2.941" Y="0.507" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>

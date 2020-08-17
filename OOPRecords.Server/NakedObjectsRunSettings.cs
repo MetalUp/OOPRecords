@@ -14,64 +14,40 @@ using NakedObjects.Architecture.Menu;
 using NakedObjects.Meta.Audit;
 using NakedObjects.Meta.Authorization;
 using OOPRecords.Model;
+using System.Linq;
 
-namespace NakedObjects.Rest.App.Demo {
-    public static class NakedObjectsRunSettings {
+namespace NakedObjects.Rest.App.Demo
+{
+    public static class NakedObjectsRunSettings
+    {
+        private static string[] ModelNamespaces = new string[] { "OOPRecords.Model" };
 
-        private static string[] ModelNamespaces {
-            get {
-                return new string[] { "OOPRecords.Model" };
-            }
+        public static ReflectorConfiguration ReflectorConfig()
+        {
+            return new ReflectorConfiguration(new Type[] { }, AppConfig.Services(), ModelNamespaces, MainMenus);
         }
 
-        private static Type[] Types {
-            get {
-                return new Type[] {
-                };
-            }
-        }
-
-        private static Type[] Services {
-            get {
-                return new [] {
-                    typeof(StudentRepository),
-                    typeof(TeacherRepository),
-                    typeof(SubjectRepository),
-                    typeof(SetRepository),
-                };
-            }
-        }
-
-        public static ReflectorConfiguration ReflectorConfig() {
-            return new ReflectorConfiguration(Types, Services, ModelNamespaces, MainMenus);
-        }
-
-        public static EntityObjectStoreConfiguration EntityObjectStoreConfig(IConfiguration configuration) {
+        public static EntityObjectStoreConfiguration EntityObjectStoreConfig(IConfiguration configuration)
+        {
             var config = new EntityObjectStoreConfiguration();
-            config.UsingContext(() => new DatabaseContext("OOPRecords"));
+            config.UsingContext(() => AppConfig.CreateDbContext());
             return config;
         }
 
-        public static IAuditConfiguration AuditConfig() {
+        public static IAuditConfiguration AuditConfig()
+        {
             return null;
         }
 
-        public static IAuthorizationConfiguration AuthorizationConfig() {
+        public static IAuthorizationConfiguration AuthorizationConfig()
+        {
             return null;
         }
 
-        /// <summary>
-        /// Return an array of IMenus (obtained via the factory, then configured) to
-        /// specify the Main Menus for the application. If none are returned then
-        /// the Main Menus will be derived automatically from the Services.
-        /// </summary>
-        public static IMenu[] MainMenus(IMenuFactory factory) {
-            return new IMenu[] {
-                factory.NewMenu<StudentRepository>(true, "Students"),
-                factory.NewMenu<TeacherRepository>(true, "Staff"),
-                factory.NewMenu<SubjectRepository>(true, "Subjects"),
-                 factory.NewMenu<SetRepository>(true, "Sets")
-            };
+        public static IMenu[] MainMenus(IMenuFactory factory)
+        {
+            var menus = AppConfig.MainMenus();
+            return menus.Select(kvp => factory.NewMenu(kvp.Value, true, kvp.Key)).ToArray();
         }
     }
 }
