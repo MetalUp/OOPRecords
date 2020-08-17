@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\OOPRecords.Model\OOPRecords.Model.csproj" />
+    <ProjectReference Include="..\OOPRecords.ModelVB\OOPRecords.Model.vbproj" />
   </ItemGroup>
 
 

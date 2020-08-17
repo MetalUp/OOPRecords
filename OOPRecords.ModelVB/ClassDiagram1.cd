@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="OOPRecords.Model.Student">
+    <Position X="5.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgCAEAAACAAgQAEAEAAAAAAAAEQAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Student.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Tutor" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="OOPRecords.Model.Teacher">
+    <Position X="3.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAgAAAAAAEAEAAAAAAAAAAAAAAAAAAAAAAAIAAg=</HashCode>
+      <FileName>Teacher.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Tutees" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
