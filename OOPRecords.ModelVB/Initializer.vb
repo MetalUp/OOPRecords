@@ -98,9 +98,9 @@ Public Class Initializer
         Return obj
     End Function
 
-    Private Sub AssignStudents(ByVal [set] As TeachingSet, ParamArray students As Student())
+    Private Sub AssignStudents(ByVal ts As TeachingSet, ParamArray students As Student())
         For Each stu As Student In students
-            [set].Students.Add(stu)
+            ts.Students.Add(stu)
         Next
     End Sub
 
