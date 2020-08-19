@@ -6,7 +6,7 @@ using NakedObjects;
 
 namespace OOPRecords.Model
 {
-    public class Set
+    public class TeachingSet
     {
         public IDomainObjectContainer Container { set; protected get; }
 

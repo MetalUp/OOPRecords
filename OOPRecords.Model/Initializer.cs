@@ -92,14 +92,14 @@ protected override void Seed(DatabaseContext context)
             return obj;
         }
 
-        private Set CreateNewSet(DbSet<Set> sets, string name, Subject subject, int yearGroup, Teacher teacher)
+        private TeachingSet CreateNewSet(DbSet<TeachingSet> sets, string name, Subject subject, int yearGroup, Teacher teacher)
         {
-            var obj = new Set() { SetName = name, Subject = subject, YearGroup = yearGroup, Teacher = teacher };
+            var obj = new TeachingSet() { SetName = name, Subject = subject, YearGroup = yearGroup, Teacher = teacher };
             sets.Add(obj);
             return obj;
         }
 
-        private void AssignStudents(Set set, params Student[] students)
+        private void AssignStudents(TeachingSet set, params Student[] students)
         {
             foreach (Student stu in students)
             {

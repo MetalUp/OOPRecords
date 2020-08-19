@@ -54,7 +54,7 @@ namespace OOPRecords.Model
         [MemberOrder(6)]
         [Eagerly(EagerlyAttribute.Do.Rendering)]
         [TableView(false, "Subject", "SetName", "Teacher")]
-        public virtual ICollection<Set> Sets { get; set; } = new List<Set>();
+        public virtual ICollection<TeachingSet> Sets { get; set; } = new List<TeachingSet>();
 
         [Hidden(WhenTo.Always)]
         public int Age()

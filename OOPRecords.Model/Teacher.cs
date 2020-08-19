@@ -31,10 +31,10 @@ namespace OOPRecords.Model
         [MemberOrder(5)]
         [Eagerly(EagerlyAttribute.Do.Rendering)]
         [TableView(false, "Subject", "YearGroup", "SetName")]
-        public virtual ICollection<Set> SetsTaught()
+        public virtual ICollection<TeachingSet> SetsTaught()
         {
             int id = this.Id;
-            return Container.Instances<Set>().Where(s => s.Teacher.Id == id).OrderBy(s => s.Subject.Name).ThenBy(s => s.YearGroup).ToList();
+            return Container.Instances<TeachingSet>().Where(s => s.Teacher.Id == id).OrderBy(s => s.Subject.Name).ThenBy(s => s.YearGroup).ToList();
         }
     }
 }
