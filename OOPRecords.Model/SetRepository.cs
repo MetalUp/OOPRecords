@@ -7,14 +7,14 @@ namespace OOPRecords.Model
     {
         public IDomainObjectContainer Container { set; protected get; }
 
-        public Set CreateNewSet()
+        public TeachingSet CreateNewSet()
         {
-            return Container.NewTransientInstance<Set>();
+            return Container.NewTransientInstance<TeachingSet>();
         }
 
-        public IQueryable<Set> ListSets([Optionally] Subject subject, [Optionally] int? yearGroup)
+        public IQueryable<TeachingSet> ListSets([Optionally] Subject subject, [Optionally] int? yearGroup)
         {
-            var sets = Container.Instances<Set>();
+            var sets = Container.Instances<TeachingSet>();
             if (subject != null)
             {
                 int id = subject.Id;

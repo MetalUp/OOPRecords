@@ -9,7 +9,7 @@ namespace OOPRecords.Model
         public IDomainObjectContainer Container { set; protected get; }
 
         [Hidden(WhenTo.Always)]
-        public virtual int Id { get; set; }
+        public  int Id { get; set; }
 
         [MemberOrder(1)]
         public virtual string Title { get; set; }
